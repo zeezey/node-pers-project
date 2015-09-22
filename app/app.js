@@ -1,35 +1,34 @@
 'use strict';
 
-angular.module('myApp', ['ngRoute'])
-  .controller('MovieController', function($scope, $http){
-    var pendingTask;
+var app = angular.module('myApp', ['ngRoute']);
 
-    if($scope.search === undefined){
-      $scope.search = "Sherlock Holmes";
-      fetch();
-    }
 
-    $scope.change = function(){
-      if(pendingTask){
-        clearTimeout(pendingTask);
-      }
-      pendingTask = setTimeout(fetch, 800);
-    };
+app.config(['$routeProvider', function($routeProvider) {
+            $routeProvider.
+             when('/home', {
+                    templateUrl: 'index.html',
+                    controller: 'HomeController'
+            }).
+            when('/genre', {
+                 templateUrl: '/views/genre.html',
+                controller: 'GenreController'
 
-    function fetch(){
-      $http.get("https://www.omdbapi.com/?t=" + $scope.search + "&tomatoes=true&plot=full")
-       .success(function(response){ $scope.details = response; });
+                });
 
-      $http.get("https://www.omdbapi.com/?s=" + $scope.search)
-       .success(function(response){  $scope.related = response; });
-    }
+}]);
 
-    $scope.update = function(movie){
-      $scope.search = movie.Title;
-      $scope.change();
-    };
+app.controller('MainCtrl', ['$route', '$routeParams', '$location',
+  function($route, $routeParams, $location) {
+    this.$route = $route;
+    this.$location = $location;
+    this.$routeParams = $routeParams;
+}]);
+app.controller('HomeController', ['$routeParams', function($routeParams) {
+  this.name = "HomeController";
+  this.params = $routeParams;
+}]);
+app.controller('GenreController', ['$routeParams', function($routeParams) {
+  this.name = "GenreController";
+  this.params = $routeParams;
+}]);
 
-    $scope.select = function(){
-      this.setSelectionRange(0, this.value.length);
-    };
-  });

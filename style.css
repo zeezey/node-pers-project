@@ -1,5 +1,4 @@
 body {
-  background: url(../images/bg-sky.png);
   background-repeat: repeat !important;
   background-attachment: fixed;
 }
@@ -78,3 +77,9 @@ ul.rel-results {
 .divider:before {
   content: "|";
 }
+
+.ul1 {
+    list-style: none;
+    float: right;
+}
+
