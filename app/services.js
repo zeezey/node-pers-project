@@ -7,7 +7,7 @@ app.service('movieService', function($http, $q){
 //        console.log(4444444, deferred);
         $http({
             method: 'GET',
-            url: 'http://www.omdbapi.com/?t=' + movie + '&tomatoes=true&plot=full&r=json'
+            url: 'https://www.omdbapi.com/?t=' + movie + '&tomatoes=true&plot=full&r=json'
         }).then(function (response) {
             console.log('22222', response);
             var titleData = response.data;
@@ -35,7 +35,7 @@ this.getGenreData = function (genre) {
         var deferred = $q.defer();
         $http({
             method: 'GET',
-            url: 'http://api.themoviedb.org/3/genre/' + genre + '/movies?api_key=790ad4e71f7dae563114358d076d138e'
+            url: 'https://api.themoviedb.org/3/genre/' + genre + '/movies?api_key=790ad4e71f7dae563114358d076d138e'
         }).then(function (response) {
             console.log('22222', response);
             var genreData = response.data.results;
