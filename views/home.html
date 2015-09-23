@@ -14,10 +14,10 @@
       </div>
 
       <div ng-if="movieData">
-        <img ng-src="{{ movieData.Poster=='N/A' ? 'http://placehold.it/150x220&text=N/A' : 'http://imdb.wemakesites.net/api/1.0/img/?url='+movieData.Poster }}" class="thumbnail animated flip movie-poster">
+        <img ng-src="{{ movieData.Poster=='N/A' ? 'https://placehold.it/150x220&text=N/A' : 'https://imdb.wemakesites.net/api/1.0/img/?url='+movieData.Poster }}" class="thumbnail animated flip movie-poster">
 
         <span class="span-outer">
-          <a href="http://imdb.com/title/{{ movieData.imdbID }}" target="_blank">{{ movieData.Title }}</a>
+          <a href="https://imdb.com/title/{{ movieData.imdbID }}" target="_blank">{{ movieData.Title }}</a>
         </span>, {{ movieData.Year }}
 
         <p><strong>Released on:</strong> {{ movieData.Released }} ({{ movieData.Runtime }})</p>
@@ -46,11 +46,11 @@
         <p class="outer-p-3">
           <a ng-href="https://www.youtube.com/results?search_query={{ movieData.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Watch Trailers!</a>
           <span class="divider"></span>
-          <a ng-href="http://subscene.com/subtitles/title?q={{ movieData.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Get Subtitles!</a>
+          <a ng-href="https://subscene.com/subtitles/title?q={{ movieData.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Get Subtitles!</a>
           <span class="divider"></span>
-          <a ng-href="http://www.theost.com/search/custom/?key={{ movieData.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Hear Soundtracks!</a>
+          <a ng-href="https://www.theost.com/search/custom/?key={{ movieData.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Hear Soundtracks!</a>
           <span class="divider"></span>
-          <a ng-href="http://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Ddvd&field-keywords={{ movieData.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Buy this movie!</a>
+          <a ng-href="https://www.amazon.com/s/ref=nb_sb_noss_1?url=search-alias%3Ddvd&field-keywords={{ movieData.Title }}" target="_blank" class="btn btn-default btn-xs btn-info">Buy this movie!</a>
         </p>
       </div>
 
