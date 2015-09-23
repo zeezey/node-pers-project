@@ -11,9 +11,9 @@ app.config(['$routeProvider', function($routeProvider) {
             }).
             when('/genre', {
                  templateUrl: '/views/genre.html',
-                controller: 'GenreController'
+                controller: 'gCtrl'
             })
-            .otherwise('/home')
+            .otherwise('/home');
 
 }]);
 

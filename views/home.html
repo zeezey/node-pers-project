@@ -14,7 +14,7 @@
       </div>
 
       <div ng-if="movieData">
-        <img ng-src="{{movieData.Poster}}" class="thumbnail animated flip movie-poster">
+        <img ng-src="{{ movieData.Poster=='N/A' ? 'http://placehold.it/150x220&text=N/A' : 'http://imdb.wemakesites.net/api/1.0/img/?url='+movieData.Poster }}" class="thumbnail animated flip movie-poster">
 
         <span class="span-outer">
           <a href="http://imdb.com/title/{{ movieData.imdbID }}" target="_blank">{{ movieData.Title }}</a>
@@ -60,13 +60,13 @@
     </div>
 
     <div id="related-results" class="col-md-4 animated bounce related-results">
-      <div ng-if="related.Response!=='False'">
+      <div ng-if="movieData.Response!=='False'">
         Related Results:
         <hr>
 
         <ul class="rel-results">
-          <li ng-repeat="movie in related.Search">
-            <a href="#" id="{{ $index + 1 }}" ng-click="update(movie)">{{ movie.Title }}</a>, {{ movie.Year }}
+          <li ng-repeat="movie in getMovieData">
+            <a href="#" id="{{ $index + 1 }}" ng-submit="getMovieData(search)">{{ movieData.Title }}</a>, {{ movieData.Year }}
           </li>
         </ul>
       </div>

@@ -29,3 +29,24 @@ app.service('movieService', function($http, $q){
         return deferred.promise;
     };
 });
+
+app.service('gService', function($http, $q){
+this.getGenreData = function (genre) {
+        var deferred = $q.defer();
+        $http({
+            method: 'GET',
+            url: 'http://api.themoviedb.org/3/genre/' + genre + '/movies?api_key=790ad4e71f7dae563114358d076d138e'
+        }).then(function (response) {
+            console.log('22222', response);
+            var genreData = response.data.results;
+            var genreArr = [];
+            for(var i = 0; i < genreData.length; i++){ //loop through all objects returned from promise
+                genreArr.push({
+                    Title: genreData[i].original_title
+                });
+            }
+            deferred.resolve(genreArr);
+});
+                return deferred.promise;
+                };
+});
