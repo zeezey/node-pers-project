@@ -1,6 +1,11 @@
-<div class="input-group search-bar"><form ng-submit="getGenreData(search)"><input type="text" ng-model="search" class="form-control" placeholder="Enter a Genre" autofocus /></form>
-<span class="input-group-addon bar-style"><i class="glyphicon glyphicon-search"></i></span>
-    </div>
+    <button type="button" class="btn btn-primary" ng-click="getGenreData(28)">Action</button>
+    <button type="button" class="btn btn-primary genrebtn" ng-click="getGenreData(12)">Adventure</button>
+    <button type="button" class="btn btn-primary genrebtn" ng-click="getGenreData(16)">Animation</button>
+    <button type="button" class="btn btn-primary genrebtn" ng-click="getGenreData(35)">Comedy</button>
+    <button type="button" class="btn btn-primary genrebtn" ng-click="getGenreData(99)">Documentary</button>
+    <button type="button" class="btn btn-primary genrebtn" ng-click="getGenreData(18)">Drama</button>
+    <button type="button" class="btn btn-primary genrebtn" ng-click="getGenreData(27)">Horror</button>
+
     <div class="panel panel-default">
   <!-- Default panel contents -->
   <div class="panel-heading">Titles matching your Genre search</div>
