@@ -42,7 +42,11 @@ this.getGenreData = function (genre) {
             var genreArr = [];
             for(var i = 0; i < genreData.length; i++){ //loop through all objects returned from promise
                 genreArr.push({
-                    Title: genreData[i].original_title
+                    Title: genreData[i].original_title,
+                    Release: genreData[i].release_date,
+                    Vote: genreData[i].vote_average,
+                    Poster: genreData[i].poster_path
+
                 });
             }
             deferred.resolve(genreArr);
